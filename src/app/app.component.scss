@@ -1,0 +1,19 @@
+main{
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #1c1c1c;
+
+  .header {
+    flex: 1;
+  }
+
+  .home {
+    flex: 1;
+  }
+
+}

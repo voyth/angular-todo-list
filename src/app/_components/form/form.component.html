@@ -1,0 +1,20 @@
+<form [formGroup]="todoForm">
+  <div>
+    <input
+      type="text"
+      formControlName="description"
+      [class.is-invalid]="
+        todoForm.get('description')?.errors && todoForm.get('description')?.touched
+      "
+    />
+    <button [disabled]="this.todoForm.invalid" (click)="submitForm()">ADD</button>
+  </div>
+    @if (todoForm.get('description')?.hasError('required') && todoForm.get('description')?.touched) {
+    <div class="invalid-feedback">To do description is required</div>
+    }
+    @if (todoForm.get('description')?.hasError('maxlength')) {
+    <div class="invalid-feedback">
+      Description length must be lesser than 10 characters
+    </div>
+    }
+  </form>

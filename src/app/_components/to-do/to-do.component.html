@@ -1,0 +1,19 @@
+<li class="animate">
+  @if (isEditing) {
+  <app-form [todo]="todo" (newToDo)="saveChanges($event)"></app-form>
+  } @else {
+  <span [class.completed]="todo?.isComplete">{{ todo?.description }}</span>
+  }
+
+  @if (!isEditing) {
+  <button (click)="toggleEditToDo()">Edit</button>
+  }
+
+  @if (todo?.isComplete) {
+  <button class="remove-todo" (click)="removeTodo()">Remove</button>
+  } @else {
+  <button class="complete-todo" (click)="completeTodo()">
+    Complete
+  </button>
+  }
+</li>

@@ -1,0 +1,17 @@
+<div>
+  <app-form class="form" (newToDo)="submitForm($event)"></app-form>
+
+  <ul>
+    @for (todo of todos; track todo.id) {
+    <app-to-do
+      class="list-item"
+      [todo]="todo"
+      (editedToDo)="saveEditedToDo($event)"
+      (completeToDo)="saveEditedToDo($event)"
+      (removeToDo)="removeToDo($event)"
+    ></app-to-do>
+    } @empty {
+    <li>No ToDos Available!</li>
+    }
+  </ul>
+</div>
