@@ -66,6 +66,13 @@
       border-radius: 8px;
       box-shadow: 2px 2px 5px #1b1b1b;
       transition: background-color .5s;
+
+      &:disabled {
+          border: none;
+          background-color: #464a50;
+          color: #939393;
+          box-shadow: none;
+        }
     }
 
     .btn-cancel {

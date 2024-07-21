@@ -4,8 +4,27 @@ div{
   align-items: center;
   gap: 20px;
 
-  .form {
-    //background-color: rgb(152, 173, 251);
+  z-index: 0;
+
+  .container {
+    width: 80%;
+    align-items: flex-end;
+    padding: 0px 10px;
+
+    .btn {
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        padding: 8px 15px;
+        border-radius: 8px;
+        background-color: #0a1d4e;
+        box-shadow: 2px 2px 5px #1b1b1b;
+        transition: background-color .5s;
+
+        &:hover {
+          background-color: #113183;
+        }
+    }
   }
 
   ul{

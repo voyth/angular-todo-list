@@ -1,20 +1,38 @@
-<div class="overlay"></div>
+<div class="overlay" (click)="closeModal()"></div>
 
-<div class="modal">
+<div class="modal" [formGroup]="todoForm">
   <div class="form-control">
     <label for="title">Title</label>
-    <input type="text" name="title" id="title" />
+    <input type="text" name="title" id="title" formControlName="title" />
   </div>
   <div class="form-control">
     <label for="description">Description</label>
-    <textarea name="description" id="description" rows="8" cols="40"></textarea>
+    <textarea
+      name="description"
+      id="description"
+      rows="8"
+      cols="40"
+      formControlName="description"
+    ></textarea>
   </div>
-  <div class="form-control checkbox">
+  <!-- <div class="form-control checkbox">
     <label for="isComplete">Is complete?</label>
-    <input type="checkbox" name="isComplete" id="isComplete" class="checkbox" />
-  </div>
+    <input
+      type="checkbox"
+      name="isComplete"
+      id="isComplete"
+      class="checkbox"
+      formControlName="isComplete"
+    />
+  </div> -->
   <div class="modal-actions">
-    <button class="btn btn-cancel">Cancel</button>
-    <button class="btn btn-save">Save</button>
+    <button class="btn btn-cancel" (click)="closeModal()">Cancel</button>
+    <button
+      class="btn btn-save"
+      [disabled]="this.todoForm.invalid"
+      (click)="saveToDo()"
+    >
+      Save
+    </button>
   </div>
 </div>

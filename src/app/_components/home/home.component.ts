@@ -2,23 +2,28 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewToDo, ToDo } from '../../models/todos';
 import { ToDoService } from '../../_services/to-do.service';
-import { FormComponent } from "../form/form.component";
 import { ToDoComponent } from "../to-do/to-do.component";
+import { ToDoModalComponent } from "../to-do-modal/to-do-modal.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, FormComponent, ToDoComponent],
+  imports: [ReactiveFormsModule, ToDoComponent, ToDoModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+  isModalOpen: boolean = false;
   todos: ToDo[] = [];
 
   private service = inject(ToDoService);
 
   ngOnInit(): void {
     this.getAllToDos();
+  }
+
+  toggleModal() {
+    this.isModalOpen = !this.isModalOpen;
   }
 
   getAllToDos() {
