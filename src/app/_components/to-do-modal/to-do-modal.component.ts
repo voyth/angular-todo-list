@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './to-do-modal.component.scss'
 })
 export class ToDoModalComponent {
-
+  
 }
