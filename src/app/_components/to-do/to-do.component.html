@@ -1,19 +1,27 @@
 <li class="animate">
-  @if (isEditing) {
-  <app-form [todo]="todo" (newToDo)="saveChanges($event)"></app-form>
-  } @else {
-  <span [class.completed]="todo?.isComplete">{{ todo?.description }}</span>
-  }
+  <ng-container>
+    @if (isEditing) {
+    <app-to-do-modal
+      [todo]="todo"
+      (newToDo)="saveChanges($event); toggleEditToDo()"
+      (close)="toggleEditToDo()"
+    ></app-to-do-modal>
+    } @else {
+    <span [class.completed]="todo?.isComplete">{{ todo?.title }}</span>
+    }
+  </ng-container>
 
-  @if (!isEditing) {
-  <button (click)="toggleEditToDo()">Edit</button>
-  }
+  <ng-container>
+    @if (!isEditing) {
+    <button (click)="toggleEditToDo()">Edit</button>
+    }
+  </ng-container>
 
-  @if (todo?.isComplete) {
-  <button class="remove-todo" (click)="removeTodo()">Remove</button>
-  } @else {
-  <button class="complete-todo" (click)="completeTodo()">
-    Complete
-  </button>
-  }
+  <ng-container>
+    @if (todo?.isComplete) {
+    <button class="remove-todo" (click)="removeTodo()">Remove</button>
+    } @else {
+    <button class="complete-todo" (click)="completeTodo()">Complete</button>
+    }
+  </ng-container>
 </li>

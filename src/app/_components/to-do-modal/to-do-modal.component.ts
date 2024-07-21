@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NewToDo } from '../../models/todos';
+import { NewToDo, ToDo } from '../../models/todos';
 
 @Component({
   selector: 'app-to-do-modal',
@@ -10,6 +10,7 @@ import { NewToDo } from '../../models/todos';
   styleUrl: './to-do-modal.component.scss'
 })
 export class ToDoModalComponent implements OnInit, OnDestroy {
+  @Input() todo: ToDo | undefined;
   todoForm!: FormGroup;
   @Output() newToDo = new EventEmitter<NewToDo>();
   @Output() close = new EventEmitter();
@@ -20,15 +21,15 @@ export class ToDoModalComponent implements OnInit, OnDestroy {
 
   initializeForm() {
     this.todoForm = new FormGroup({
-      title: new FormControl<string>('', {
+      title: new FormControl<string>(this.todo?.title ?? '', {
         nonNullable: true,
         validators: [Validators.required, Validators.maxLength(100)]
       }),
-      description: new FormControl<string>('', {
+      description: new FormControl<string>(this.todo?.description ?? '', {
         nonNullable: true,
         validators: [Validators.required, Validators.maxLength(250)]
       }),
-      isComplete: new FormControl<boolean>(false, {
+      isComplete: new FormControl<boolean>(this.todo?.isComplete ?? false, {
         nonNullable: true
       })
     });
@@ -41,7 +42,6 @@ export class ToDoModalComponent implements OnInit, OnDestroy {
   saveToDo() {
     if (this.todoForm.valid) {
       this.newToDo.emit(this.todoForm.value);
-      this.closeModal();
     }
   }
 

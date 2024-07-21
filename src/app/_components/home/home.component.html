@@ -5,7 +5,7 @@
 
   @if (isModalOpen) {
   <app-to-do-modal
-    (newToDo)="submitForm($event)"
+    (newToDo)="submitForm($event); toggleModal()"
     (close)="toggleModal()"
   ></app-to-do-modal>
   }
