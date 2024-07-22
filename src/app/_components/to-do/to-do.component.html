@@ -1,4 +1,4 @@
-<li class="animate" [class.completed]="todo?.isComplete">
+<li class="animate" [class]="todo?.isComplete ? 'todo-card-completed' : 'todo-card'">
   @if (isEditing) {
   <app-to-do-modal
     [todo]="todo"
@@ -6,7 +6,7 @@
     (close)="toggleModal()"
   ></app-to-do-modal>
   }
-  <span [class.completed]="todo?.isComplete">{{ todo?.title }}</span>
+  <span [class.todo-card-title-completed]="todo?.isComplete">{{ todo?.title }}</span>
 
   <div class="card-actions">
     <i class="fa-solid fa-eye view-todo-details"></i>

@@ -1,5 +1,4 @@
-li {
-  background-color: #495567;
+.todo-card, .todo-card-completed {
   padding: 15px 30px;
   border-radius: 8px;
   box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
@@ -8,6 +7,7 @@ li {
 
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 
   transition: all .3s;
 
@@ -17,23 +17,21 @@ li {
     transition: all .3s;
   }
 
-  .completed {
-    text-decoration: line-through;
+  .todo-card-title-completed {
     color: #6e6e6e;
+    text-decoration: line-through;
   }
 
   .card-actions {
     display: flex;
-    justify-content: space-between;
-    //gap: 10px;
-    width: 110px;
-    //background-color: palegoldenrod;
+    gap: 10px;
 
     i {
       padding: 5px 5px;
       color: #fff;
       font-size: 18px;
       border-radius: 5px;
+      box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       transition: all .3s;
     }
 
@@ -77,10 +75,17 @@ li {
       }
     }
   }
-
 }
 
-.completed {
+.todo-card {
+  background-color: #495567;
+
+  &:hover {
+    background-color: #59677c;
+  }
+}
+
+.todo-card-completed {
   background-color: #2f3743;
 }
 
