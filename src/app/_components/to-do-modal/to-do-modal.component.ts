@@ -27,7 +27,7 @@ export class ToDoModalComponent implements OnInit, OnDestroy {
       }),
       description: new FormControl<string>(this.todo?.description ?? '', {
         nonNullable: true,
-        validators: [Validators.required, Validators.maxLength(250)]
+        validators: [Validators.maxLength(250)]
       }),
       isComplete: new FormControl<boolean>(this.todo?.isComplete ?? false, {
         nonNullable: true

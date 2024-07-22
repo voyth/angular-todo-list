@@ -3,17 +3,39 @@
 <div class="modal" [formGroup]="todoForm">
   <div class="form-control">
     <label for="title">Title</label>
-    <input type="text" name="title" id="title" formControlName="title" />
+    <input
+      type="text"
+      name="title"
+      id="title"
+      formControlName="title"
+      [class.is-invalid]="
+        todoForm.get('title')?.errors && todoForm.get('title')?.touched
+      "
+    />
+    @if (todoForm.get('title')?.hasError('required') &&
+    todoForm.get('title')?.touched) {
+    <div class="invalid-feedback">Title is required</div>
+    } @if (todoForm.get('title')?.hasError('maxlength')) {
+    <div class="invalid-feedback">
+      Title length must be lesser than 100 characters
+    </div>
+    }
   </div>
   <div class="form-control">
     <label for="description">Description</label>
     <textarea
       name="description"
       id="description"
-      rows="8"
+      rows="6"
       cols="40"
       formControlName="description"
+      [class.is-invalid]="todoForm.get('description')?.errors"
     ></textarea>
+    @if (todoForm.get('description')?.hasError('maxlength')) {
+    <div class="invalid-feedback">
+      Description length must be lesser than 250 characters
+    </div>
+    }
   </div>
 
   @if (todo) {
