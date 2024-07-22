@@ -16,12 +16,24 @@ export class ToDoComponent {
   @Output() completeToDo = new EventEmitter();
   @Output() removeToDo = new EventEmitter();
 
-  toggleEditToDo() {
+  toggleModal() {
     this.isEditing = !this.isEditing;
   }
 
   saveChanges(changedTodo: NewToDo) {
-    this.editedToDo.emit({ ...changedTodo, id: this.todo?.id })
+    const verify = this.areObjectsEqual(changedTodo, this.todo);
+
+    if (!verify) {
+      this.editedToDo.emit({ ...changedTodo, id: this.todo?.id })
+    }
+  }
+
+  private areObjectsEqual(obj1: NewToDo, obj2: ToDo | undefined) {
+    const isTitleEqual = obj1.title === obj2?.title;
+    const isDescriptionEqual = obj1.description === obj2?.description;
+    const isCompleteEqual = obj1.isComplete === obj2?.isComplete;
+
+    return isTitleEqual && isDescriptionEqual && isCompleteEqual;
   }
 
   removeTodo() {
@@ -29,7 +41,6 @@ export class ToDoComponent {
   }
 
   completeTodo() {
-    const completedToDo = { ...this.todo, isComplete: true };
-    this.completeToDo.emit(completedToDo);
+    this.completeToDo.emit({ ...this.todo, isComplete: true });
   }
 }
