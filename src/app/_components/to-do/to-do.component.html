@@ -1,27 +1,34 @@
-<li class="animate">
-  <ng-container>
-    @if (isEditing) {
-    <app-to-do-modal
-      [todo]="todo"
-      (newToDo)="saveChanges($event); toggleModal()"
-      (close)="toggleModal()"
-    ></app-to-do-modal>
-    } @else {
-    <span [class.completed]="todo?.isComplete">{{ todo?.title }}</span>
-    }
-  </ng-container>
+<li class="animate" [class.completed]="todo?.isComplete">
+  @if (isEditing) {
+  <app-to-do-modal
+    [todo]="todo"
+    (newToDo)="saveChanges($event); toggleModal()"
+    (close)="toggleModal()"
+  ></app-to-do-modal>
+  }
+  <span [class.completed]="todo?.isComplete">{{ todo?.title }}</span>
 
-  <ng-container>
-    @if (!isEditing) {
-    <button (click)="toggleModal()">Edit</button>
-    }
-  </ng-container>
+  <div class="card-actions">
+    <i class="fa-solid fa-eye view-todo-details"></i>
 
-  <ng-container>
+    <i
+      class="fa-solid fa-pencil edit-todo"
+      title="Edit to do"
+      (click)="toggleModal()"
+    ></i>
+
     @if (todo?.isComplete) {
-    <button class="remove-todo" (click)="removeTodo()">Remove</button>
+    <i
+      class="fa-solid fa-xmark remove-todo"
+      title="Remove to do"
+      (click)="removeTodo()"
+    ></i>
     } @else {
-    <button class="complete-todo" (click)="completeTodo()">Complete</button>
+    <i
+      class="fa-solid fa-check complete-todo"
+      title="Complete to do"
+      (click)="completeTodo()"
+    ></i>
     }
-  </ng-container>
+  </div>
 </li>

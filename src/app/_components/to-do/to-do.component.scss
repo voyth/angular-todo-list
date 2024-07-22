@@ -9,6 +9,8 @@ li {
   display: flex;
   justify-content: space-between;
 
+  transition: all .3s;
+
   span {
     color: #e1e0e0;
     text-decoration: none;
@@ -17,36 +19,69 @@ li {
 
   .completed {
     text-decoration: line-through;
-    color: #a0a0a0;
+    color: #6e6e6e;
   }
 
-  button {
-    padding: 0px 20px;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: all .3s;
-  }
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    //gap: 10px;
+    width: 110px;
+    //background-color: palegoldenrod;
 
-  .complete-todo {
-    border: 2px solid #27a257;
-    background-color: #27a257;
+    i {
+      padding: 5px 5px;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: all .3s;
+    }
 
-    &:hover {
-      border: 2px solid #1b723d;
-      background-color: #1b723d;
+    .view-todo-details {
+      border: 2px solid #3e27a2;
+      background-color: #3e27a2;
+
+      &:hover {
+        border: 2px solid #271968;
+        background-color: #271968;
+      }
+    }
+
+    .edit-todo {
+      border: 2px solid #2773a2;
+      background-color: #2773a2;
+
+      &:hover {
+        border: 2px solid #194a68;
+        background-color: #194a68;
+      }
+    }
+
+    .complete-todo {
+      border: 2px solid #27a257;
+      background-color: #27a257;
+
+      &:hover {
+        border: 2px solid #1b723d;
+        background-color: #1b723d;
+      }
+    }
+
+    .remove-todo {
+      border: 2px solid #c83857;
+      background-color: #c83857;
+
+      &:hover {
+        border: 2px solid #89263b;
+        background-color: #89263b;
+      }
     }
   }
 
-  .remove-todo {
-    border: 2px solid #c83857;
-    background-color: #c83857;
+}
 
-    &:hover {
-      border: 2px solid #89263b;
-      background-color: #89263b;
-    }
-  }
+.completed {
+  background-color: #2f3743;
 }
 
 .animate {
