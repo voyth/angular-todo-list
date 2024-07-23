@@ -12,7 +12,7 @@
   transition: all .3s;
 
   span {
-    color: #e1e0e0;
+    color: #cbcbcb;
     text-decoration: none;
     transition: all .3s;
   }
@@ -20,6 +20,7 @@
   .todo-card-title-completed {
     color: #6e6e6e;
     text-decoration: line-through;
+    background-color: transparent;
   }
 
   .card-actions {
@@ -35,66 +36,60 @@
       transition: all .3s;
     }
 
+    .view-todo-details, .edit-todo, .complete-todo, .remove-todo {
+      border: 2px solid #5f7391;
+      color: #5f7391;
+
+      &:hover {
+        color: #fff;
+        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
+      }
+    }
+
     .view-todo-details {
-      border: 2px solid #000;
-      color: #000;
 
       &:hover {
         border: 2px solid #3e27a2;
-        color: #fff;
         background-color: #3e27a2;
-        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       }
     }
 
     .edit-todo {
-      border: 2px solid #000;
-      color: #000;
 
       &:hover {
         border: 2px solid #2773a2;
-        color: #fff;
         background-color: #2773a2;
-        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       }
     }
 
     .complete-todo {
-      border: 2px solid #000;
-      color: #000;
 
       &:hover {
         border: 2px solid #27a257;
-        color: #fff;
         background-color: #27a257;
-        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       }
     }
 
     .remove-todo {
-      border: 2px solid #000;
-      color: #000;
 
       &:hover {
         border: 2px solid #c83857;
-        color: #fff;
         background-color: #c83857;
-        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       }
     }
   }
 }
 
 .todo-card {
-  background-color: #495567;
+  background-color: #1c1c1c;
 
   &:hover {
-    background-color: #59677c;
+    background-color: #0b0f26;
   }
 }
 
 .todo-card-completed {
-  background-color: #2f3743;
+  background-color: #04111e41;
 }
 
 .animate {
