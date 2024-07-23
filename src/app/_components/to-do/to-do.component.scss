@@ -1,5 +1,4 @@
-li {
-  background-color: #495567;
+.todo-card, .todo-card-completed {
   padding: 15px 30px;
   border-radius: 8px;
   box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
@@ -8,45 +7,89 @@ li {
 
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+
+  transition: all .3s;
 
   span {
-    color: #e1e0e0;
+    color: #cbcbcb;
     text-decoration: none;
     transition: all .3s;
   }
 
-  .completed {
+  .todo-card-title-completed {
+    color: #6e6e6e;
     text-decoration: line-through;
-    color: #a0a0a0;
+    background-color: transparent;
   }
 
-  button {
-    padding: 0px 20px;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: all .3s;
-  }
+  .card-actions {
+    display: flex;
+    gap: 10px;
 
-  .complete-todo {
-    border: 2px solid #27a257;
-    background-color: #27a257;
+    height: 31px;
 
-    &:hover {
-      border: 2px solid #1b723d;
-      background-color: #1b723d;
+    i {
+      padding: 5px 5px;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: all .3s;
+    }
+
+    .view-todo-details, .edit-todo, .complete-todo, .remove-todo {
+      border: 2px solid #5f7391;
+      color: #5f7391;
+
+      &:hover {
+        color: #fff;
+        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
+      }
+    }
+
+    .view-todo-details {
+
+      &:hover {
+        border: 2px solid #3e27a2;
+        background-color: #3e27a2;
+      }
+    }
+
+    .edit-todo {
+
+      &:hover {
+        border: 2px solid #2773a2;
+        background-color: #2773a2;
+      }
+    }
+
+    .complete-todo {
+
+      &:hover {
+        border: 2px solid #27a257;
+        background-color: #27a257;
+      }
+    }
+
+    .remove-todo {
+
+      &:hover {
+        border: 2px solid #c83857;
+        background-color: #c83857;
+      }
     }
   }
+}
 
-  .remove-todo {
-    border: 2px solid #c83857;
-    background-color: #c83857;
+.todo-card {
+  background-color: #1c1c1c;
 
-    &:hover {
-      border: 2px solid #89263b;
-      background-color: #89263b;
-    }
+  &:hover {
+    background-color: #0b0f26;
   }
+}
+
+.todo-card-completed {
+  background-color: #04111e41;
 }
 
 .animate {
