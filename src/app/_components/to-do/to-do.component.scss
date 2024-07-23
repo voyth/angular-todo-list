@@ -26,52 +26,60 @@
     display: flex;
     gap: 10px;
 
+    height: 31px;
+
     i {
       padding: 5px 5px;
-      color: #fff;
       font-size: 18px;
       border-radius: 5px;
-      box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       transition: all .3s;
     }
 
     .view-todo-details {
-      border: 2px solid #3e27a2;
-      background-color: #3e27a2;
+      border: 2px solid #000;
+      color: #000;
 
       &:hover {
-        border: 2px solid #271968;
-        background-color: #271968;
+        border: 2px solid #3e27a2;
+        color: #fff;
+        background-color: #3e27a2;
+        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       }
     }
 
     .edit-todo {
-      border: 2px solid #2773a2;
-      background-color: #2773a2;
+      border: 2px solid #000;
+      color: #000;
 
       &:hover {
-        border: 2px solid #194a68;
-        background-color: #194a68;
+        border: 2px solid #2773a2;
+        color: #fff;
+        background-color: #2773a2;
+        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       }
     }
 
     .complete-todo {
-      border: 2px solid #27a257;
-      background-color: #27a257;
+      border: 2px solid #000;
+      color: #000;
 
       &:hover {
-        border: 2px solid #1b723d;
-        background-color: #1b723d;
+        border: 2px solid #27a257;
+        color: #fff;
+        background-color: #27a257;
+        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       }
     }
 
     .remove-todo {
-      border: 2px solid #c83857;
-      background-color: #c83857;
+      border: 2px solid #000;
+      color: #000;
 
       &:hover {
-        border: 2px solid #89263b;
-        background-color: #89263b;
+        border: 2px solid #c83857;
+        color: #fff;
+        background-color: #c83857;
+        box-shadow: #00000029 0px 3px 6px, #0000003b 0px 3px 6px;
       }
     }
   }
