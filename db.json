@@ -13,10 +13,34 @@
       "id": "a391"
     },
     {
-      "title": "Work no the to do store",
-      "description": "Using observables and behavioural subject class",
+      "title": "add feat to pin todos",
+      "description": "- pin todos\n. group together pinned todos",
       "isComplete": false,
-      "id": "d1e3"
+      "id": "7177"
+    },
+    {
+      "title": "fix template bug in home component",
+      "description": "when the modal to create or edit todos is opened, an empty space is added between \"Add ToDo\" button and the list",
+      "isComplete": false,
+      "id": "819c"
+    },
+    {
+      "id": "9a08",
+      "title": "fix \"Add ToDo\" button",
+      "description": "",
+      "isComplete": false
+    },
+    {
+      "id": "20ea",
+      "title": "change card colors",
+      "description": "switch card background and icons colors",
+      "isComplete": false
+    },
+    {
+      "id": "3ff5",
+      "title": "fix list's height",
+      "description": "",
+      "isComplete": false
     }
   ]
 }
