@@ -2,45 +2,33 @@
   "todos": [
     {
       "title": "Update to do card",
-      "description": "switch buttons to icons",
-      "isComplete": false,
+      "description": "- Fix the title position when the modal to edit todos is opened - DONE",
+      "isComplete": true,
       "id": "3a06"
     },
     {
       "title": "Add modal to view to do details",
-      "description": "",
+      "description": "- The modal must include:\n * title\n * description\n * complete status\n * created at  - date\n * modified at - date",
       "isComplete": false,
       "id": "a391"
     },
     {
-      "title": "add feat to pin todos",
-      "description": "- pin todos\n. group together pinned todos",
+      "title": "Add feat to pin todos",
+      "description": "- Pin todos\n\n- Group together pinned todos",
       "isComplete": false,
       "id": "7177"
     },
     {
-      "title": "fix template bug in home component",
-      "description": "when the modal to create or edit todos is opened, an empty space is added between \"Add ToDo\" button and the list",
+      "title": "Fix template bugs in home component",
+      "description": "- When the modal to create or edit todos is opened, an empty space is added between \"Add ToDo\" button and the list\n\n- Fix list's height",
       "isComplete": false,
       "id": "819c"
     },
     {
-      "id": "9a08",
-      "title": "fix \"Add ToDo\" button",
-      "description": "",
-      "isComplete": false
-    },
-    {
-      "id": "20ea",
-      "title": "change card colors",
-      "description": "switch card background and icons colors",
-      "isComplete": false
-    },
-    {
-      "id": "3ff5",
-      "title": "fix list's height",
-      "description": "",
-      "isComplete": false
+      "title": "Fix \"Add ToDo\" button",
+      "description": "- Increase padding\n\n- Change the dark blue to a lighter tone",
+      "isComplete": false,
+      "id": "9a08"
     }
   ]
 }
