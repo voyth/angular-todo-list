@@ -3,13 +3,6 @@
     <button class="btn" (click)="toggleModal()">Add ToDo</button>
   </div>
 
-  @if (isModalOpen) {
-  <app-to-do-modal
-    (newToDo)="submitForm($event); toggleModal()"
-    (close)="toggleModal()"
-  ></app-to-do-modal>
-  }
-
   <ul>
     @for (todo of todos; track todo.id) {
     <app-to-do
@@ -24,3 +17,10 @@
     }
   </ul>
 </div>
+
+@if (isModalOpen) {
+<app-to-do-modal
+  (newToDo)="submitForm($event); toggleModal()"
+  (close)="toggleModal()"
+></app-to-do-modal>
+}
