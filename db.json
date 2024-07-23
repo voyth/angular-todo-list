@@ -1,12 +1,6 @@
 {
   "todos": [
     {
-      "title": "Update to do card",
-      "description": "- Fix the title position when the modal to edit todos is opened - DONE",
-      "isComplete": true,
-      "id": "3a06"
-    },
-    {
       "title": "Add modal to view to do details",
       "description": "- The modal must include:\n * title\n * description\n * complete status\n * created at  - date\n * modified at - date",
       "isComplete": false,
@@ -17,18 +11,6 @@
       "description": "- Pin todos\n\n- Group together pinned todos",
       "isComplete": false,
       "id": "7177"
-    },
-    {
-      "title": "Fix template bugs in home component",
-      "description": "- When the modal to create or edit todos is opened, an empty space is added between \"Add ToDo\" button and the list\n\n- Fix list's height",
-      "isComplete": false,
-      "id": "819c"
-    },
-    {
-      "title": "Fix \"Add ToDo\" button",
-      "description": "- Increase padding\n\n- Change the dark blue to a lighter tone",
-      "isComplete": false,
-      "id": "9a08"
     }
   ]
 }

@@ -13,16 +13,21 @@ div{
 
     .btn {
         border: none;
-        color: #fff;
         font-size: 18px;
-        padding: 8px 15px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        padding: 15px 20px;
         border-radius: 8px;
-        background-color: #0a1d4e;
+        color: #3676dc;
+        background-color: transparent;
+        border: 2px solid #3676dc;
         box-shadow: 2px 2px 5px #1b1b1b;
-        transition: background-color .5s;
+        transition: all .5s;
 
         &:hover {
-          background-color: #113183;
+          color: #dedede;
+          background-color: #316fd3;
+          border: 2px solid #316fd3;
         }
     }
   }
