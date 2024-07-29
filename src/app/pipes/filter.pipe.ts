@@ -7,7 +7,7 @@ import { ToDo } from '../models/todos';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(todos: any[], searchText: string): any[] {
+  transform(todos: ToDo[], searchText: string | undefined | null): ToDo[] {
 
     if (!todos) {
       return [];
