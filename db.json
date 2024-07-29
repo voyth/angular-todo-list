@@ -7,9 +7,9 @@
       "id": "a391"
     },
     {
-      "title": "Add feat to pin todos",
-      "description": "- Pin todos\n\n- Group together pinned todos",
-      "isComplete": false,
+      "title": "Add feat to search todos by title",
+      "description": "- Create filter pipe\n\n- Add text input",
+      "isComplete": true,
       "id": "7177"
     }
   ]
