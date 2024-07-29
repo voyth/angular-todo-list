@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NewToDo, ToDo } from '../../models/todos';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-to-do-modal',
@@ -30,6 +31,9 @@ export class ToDoModalComponent implements OnInit, OnDestroy {
         validators: [Validators.maxLength(250)]
       }),
       isComplete: new FormControl<boolean>(this.todo?.isComplete ?? false, {
+        nonNullable: true
+      }),
+      createdAt: new FormControl<Date>(this.todo?.createdAt ?? new Date(), {
         nonNullable: true
       })
     });
