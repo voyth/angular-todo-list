@@ -1,23 +1,29 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NewToDo, ToDo } from '../../models/todos';
 import { ToDoModalComponent } from '../to-do-modal/to-do-modal.component';
+import { ToDoDetailsModalComponent } from "../to-do-details-modal/to-do-details-modal.component";
 
 @Component({
   selector: 'app-to-do',
   standalone: true,
-  imports: [ToDoModalComponent],
+  imports: [ToDoModalComponent, ToDoDetailsModalComponent],
   templateUrl: './to-do.component.html',
   styleUrl: './to-do.component.scss'
 })
 export class ToDoComponent {
   @Input() todo: ToDo | undefined;
   isEditing: boolean = false;
+  showDetails: boolean = false;
   @Output() editedToDo = new EventEmitter();
   @Output() completeToDo = new EventEmitter();
   @Output() removeToDo = new EventEmitter();
 
   toggleModal() {
     this.isEditing = !this.isEditing;
+  }
+
+  toggleDetailsModal() {
+    this.showDetails = !this.showDetails;
   }
 
   saveChanges(changedTodo: NewToDo) {

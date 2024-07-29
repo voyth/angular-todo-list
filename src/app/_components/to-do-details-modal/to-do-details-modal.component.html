@@ -1,0 +1,20 @@
+<div class="overlay" (click)="closeModal()"></div>
+
+<div class="modal">
+  <header>
+    <h1>To Do Details</h1>
+    <i class="fa-solid fa-xmark close-icon" (click)="closeModal()"></i>
+  </header>
+  <div>
+    <label for="title">Title</label>
+    <p id="title" class="">{{ todo?.title }}</p>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <p id="description" class="">{{ todo?.description }}</p>
+  </div>
+  <div>
+    <label for="isComplete">Status</label>
+    <p id="isComplete" class="">{{ todo?.isComplete ? 'Completed' : 'Incomplete' }}</p>
+  </div>
+</div>

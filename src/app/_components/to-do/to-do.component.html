@@ -1,8 +1,16 @@
-<li class="animate" [class]="todo?.isComplete ? 'todo-card-completed' : 'todo-card'">
-  <span [class.todo-card-title-completed]="todo?.isComplete">{{ todo?.title }}</span>
+<li
+  class="animate"
+  [class]="todo?.isComplete ? 'todo-card-completed' : 'todo-card'"
+>
+  <span [class.todo-card-title-completed]="todo?.isComplete">{{
+    todo?.title
+  }}</span>
 
   <div class="card-actions">
-    <i class="fa-solid fa-eye view-todo-details"></i>
+    <i
+      class="fa-solid fa-eye view-todo-details"
+      (click)="toggleDetailsModal()"
+    ></i>
 
     <i
       class="fa-solid fa-pencil edit-todo"
@@ -26,10 +34,16 @@
   </div>
 </li>
 
-  @if (isEditing) {
-  <app-to-do-modal
-    [todo]="todo"
-    (newToDo)="saveChanges($event); toggleModal()"
-    (close)="toggleModal()"
-  ></app-to-do-modal>
-  }
+@if (isEditing) {
+<app-to-do-modal
+  [todo]="todo"
+  (newToDo)="saveChanges($event); toggleModal()"
+  (close)="toggleModal()"
+></app-to-do-modal>
+
+} @if (showDetails) {
+<app-to-do-details-modal
+  [todo]="todo"
+  (close)="toggleDetailsModal()"
+></app-to-do-details-modal>
+}
