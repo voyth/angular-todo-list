@@ -1,5 +1,9 @@
 <div>
   <div class="container">
+    <div class="input-container" [formGroup]="filterForm">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search by todo title..." formControlName="searchText" />
+    </div>
     <button class="btn" (click)="toggleModal()">ADD TODO</button>
   </div>
 
