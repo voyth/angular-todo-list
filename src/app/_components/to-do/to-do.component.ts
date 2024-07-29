@@ -27,14 +27,14 @@ export class ToDoComponent {
   }
 
   saveChanges(changedTodo: NewToDo) {
-    const verify = this.areObjectsEqual(changedTodo, this.todo);
+    const verify = this.compareToDos(changedTodo, this.todo);
 
     if (!verify) {
       this.editedToDo.emit({ ...changedTodo, id: this.todo?.id })
     }
   }
 
-  private areObjectsEqual(obj1: NewToDo, obj2: ToDo | undefined) {
+  private compareToDos(obj1: NewToDo, obj2: ToDo | undefined) {
     const isTitleEqual = obj1.title === obj2?.title;
     const isDescriptionEqual = obj1.description === obj2?.description;
     const isCompleteEqual = obj1.isComplete === obj2?.isComplete;
