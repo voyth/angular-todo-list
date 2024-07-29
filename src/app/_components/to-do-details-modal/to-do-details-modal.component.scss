@@ -55,8 +55,17 @@
 
     p {
       font-size: 14px;
-      text-wrap: wrap;
+      word-break: break-all;
       margin-top: 15px;
+    }
+  }
+
+  footer {
+
+    span {
+      color: #818181;
+      font-size: 14px;
+      font-style: italic;
     }
   }
 }
