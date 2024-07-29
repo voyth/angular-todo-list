@@ -1,24 +1,34 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { Component, inject, OnDestroy } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NewToDo, ToDo } from '../../models/todos';
 import { ToDoService } from '../../_services/to-do.service';
 import { ToDoComponent } from "../to-do/to-do.component";
 import { ToDoModalComponent } from "../to-do-modal/to-do-modal.component";
+import { FilterPipe } from "../../pipes/filter.pipe";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, ToDoComponent, ToDoModalComponent],
+  imports: [ReactiveFormsModule, ToDoComponent, ToDoModalComponent, FilterPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnDestroy {
   isModalOpen: boolean = false;
   todos: ToDo[] = [];
+  searchText: string | undefined | null;
 
-  private service = inject(ToDoService);
+  filterForm = new FormGroup({
+    searchText: new FormControl<string>('')
+  });
+  filterFormSubsription: Subscription;
 
-  ngOnInit(): void {
+  constructor(private service: ToDoService) {
+    this.filterFormSubsription = this.filterForm.valueChanges.subscribe(changes => {
+      this.searchText = changes.searchText;
+    });
+
     this.getAllToDos();
   }
 
@@ -50,5 +60,9 @@ export class HomeComponent implements OnInit {
     this.service.removeTodo(todoId).subscribe(() => {
       this.getAllToDos();
     })
+  }
+
+  ngOnDestroy() {
+    this.filterFormSubsription.unsubscribe();
   }
 }
