@@ -2,8 +2,8 @@
   "todos": [
     {
       "title": "Add modal to view to do details",
-      "description": "- The modal must include:\n * title\n * description\n * complete status\n * created at  - date\n * modified at - date",
-      "isComplete": false,
+      "description": "The modal must include: title, description, complete status, created at  - date, and modified at - date",
+      "isComplete": true,
       "id": "a391"
     },
     {
